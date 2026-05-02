@@ -4,6 +4,7 @@ import type JS from "codemod:ast-grep/langs/javascript";
 import type TS from "codemod:ast-grep/langs/typescript";
 import type TSX from "codemod:ast-grep/langs/tsx";
 
+import { normalizeConstants } from "../transforms/normalizeConstants.ts";
 import { replaceBigNumberWithBigInt } from "../transforms/replaceBigNumberWithBigInt.ts";
 
 // You can change the language to JS, TS, or TSX depending on your needs. Here we use a union type to support all three.
@@ -38,6 +39,7 @@ async function runSequential(
 const codemod: Codemod<JSOrTS> = async (root, options) => {
   return runSequential(options.language, root.root(), [
     replaceBigNumberWithBigInt,
+    normalizeConstants,
   ]);
 };
 
