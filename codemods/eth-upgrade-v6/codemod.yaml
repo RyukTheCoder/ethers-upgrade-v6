@@ -1,0 +1,25 @@
+schema_version: "1.0"
+
+name: "eth-upgrade-v6"
+version: "0.1.0"
+description: "An automated codemod to migrate ethers.js v5 to v6"
+author: "RyukTheCoder <https://github.com/RyukTheCoder>"
+license: "MIT"
+repository: "https://github.com/RyukTheCoder/ethers-upgrade-v6"
+
+targets:
+  # Keep this aligned with the files matched in workflow.yaml.
+  languages: ["typescript"]
+
+keywords: ["transformation", "migration"]
+
+registry:
+  access: "public"
+  visibility: "public"
+
+capabilities: []
+
+workflows:
+  - name: main
+    default: true
+    path: workflow.yaml
