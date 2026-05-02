@@ -1,3 +1,5 @@
-var oldVariable = "should be const";
-var anotherVar = 42;
-console.log("debug statement");
+value1 = BigNumber.from("1000");
+
+sum = value.add(value);
+
+value2 = BigNumber.from("2000").add(value1);
